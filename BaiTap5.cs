@@ -117,8 +117,17 @@ namespace BaiTap5
             Console.WriteLine("Descending array: " + string.Join(" ", arr));
 
             // Cau 7
-            Console.WriteLine($"The second largest element: {arr[1]}");
+            int secondLargest = -1;
+            for(int i = 1; i < n; i++) {
+                if(arr[i] != arr[0]) {
+                    secondLargest = arr[i];
+                    break;
+                }
+            }
+            if(secondLargest == -1) Console.WriteLine("All the elements are the same (no second largest element)");
+            else Console.WriteLine($"The second largest element: {secondLargest}");
 
+            Console.ReadKey();
         }
     }
 }
